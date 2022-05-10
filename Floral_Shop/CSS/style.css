@@ -1,0 +1,405 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.logo{
+    width: 100px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.brand_name{
+    margin-top: -60px;
+    margin-left: 85px;
+    font-family: Lobster;
+    font-size: 20px;
+}
+.navbar ul{
+    float: right;
+}
+.nav_brand{
+    display: inline-block;
+}
+.navbar ul li{
+    display: inline-block;
+    padding-top: 30px;
+    padding-right: 40px;
+    text-transform: uppercase;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+}
+@font-face {
+    src: url(../Lobster/Lobster-Regular.ttf);
+    font-family: Lobster ;
+}
+@font-face{
+    src: url(../Radio_Canada/RadioCanada-VariableFont_wdth\,wght.ttf);
+    font-family: Radio;
+}
+.cart{
+    position: relative;
+    top: -15px;
+    left: -6px;
+    background-color: black;
+    padding: 0px 5px;
+    color: white;
+    border-radius: 50%;
+}
+.navbar ul li a:hover{
+    color: #3091bb;
+    display: inline-block;
+    transform: translate(4px, -5px);
+    transition-duration: 0.5ms;
+}
+.navbar{
+    height: 90px;
+}
+/* Background */
+.img{
+    width: 100%;
+}
+.background_text{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+}
+.perfect{
+    font-family: Lobster;
+    font-weight: unset;
+    margin-bottom: 15px;
+}
+.shop_button{
+    border: 1px solid #3797b9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: #3797b9;
+}
+.shop_button:hover{
+    background-color: #3797b9;
+    color: white;
+}
+/* Porducts */
+.product{
+    text-align: center;
+    margin-top: 50px;
+}
+.divided{
+    width: 100px;
+    margin: auto;
+    border: 1px solid #3091bb;
+}
+.products{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-gap: 40px;
+    text-align: center;
+}
+.product_img{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgb(0, 0, .17);
+}
+.addtocart:hover{
+    cursor: pointer;
+}
+.line{
+    width: 20px;
+    margin: auto;
+    border: 1px solid white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.back{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    background-image: url(../Image/BG2.jpg);
+    width: 94%;
+    height: 50px;
+    padding: 65px 80px 65px 10px;
+}
+/* packaging */
+.packaging{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.packaging img{
+    width: 45%;
+    float: left;
+}
+.packaging_text{
+    position: relative;
+    left: 50px;
+    width: 90%;
+    text-align: justify;
+}
+.fa-circle-arrow-right{
+    padding-right: 10px;
+}
+.packaging_header{
+    margin-top: 20px;
+}
+.clear{
+    clear: both;
+}
+/* End packaging */
+/* Start Service */
+.service{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #e1ecee;
+    padding-top: 30px;
+    margin-top: 80px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+.service div p{
+    display: inline-block;
+    padding-left: 20px;
+}
+.service div p b{
+    font-size: 20px;
+}
+/* End of Service */
+/* Footer */
+.footer{
+    background-color: #212529;
+}
+.footer_nav{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding-top: 50px;
+    margin: 20px 20px;
+}
+.designed_by{
+    color: white ;
+}
+.footer_icon{
+    color: white;
+    margin: 20px 10px 0px;
+    display: inline-block;
+    padding-bottom: 50px;
+}
+/* End of footer */
+/* Start of Contact */
+.contact{
+    background-color: #e1ecee;
+    text-align: center;
+}
+.contact h1{
+    padding: 40px 0px;
+}
+.contact_us{
+    display: grid;
+    grid-template-columns: 235px 235px 235px 235px;
+    text-align: center;
+    margin-top: 80px;
+    grid-column-gap: 50px;
+    margin-left: 200px;
+    margin-right: 100px;
+}
+.contact_us div{
+    background-color: #f6f7f7;
+    padding: 30px;
+    border-radius: 5px;
+}
+.contact_us div p{
+    font-weight: bold;
+}
+.message{
+    display: grid;
+    grid-template-columns: 500px auto;
+    margin-top: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+    grid-column-gap: 50px;
+}
+input[type="text"],input[type="email"]{
+    width: 100%;
+    height: 35px;
+}
+#message{
+    width: 100%;
+    height: 100px;
+}
+.contact_label{
+    margin-top: 20px;
+    display: inline-block;
+}
+.send{
+    float: right;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+.message div iframe{
+    margin-top: 75px;
+}
+/* End of contact */
+/* blog */
+.b_header{
+    font-family: Lobster;
+    font-weight: unset;
+    text-align: center;
+}
+.blog_background{
+    position: absolute;
+    top: 250px;
+    left: 850px;
+}
+.blog_img{
+    width: 100%;
+    height: 500px;
+}
+.blog_text{
+    text-align: justify;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+/* end blog */
+/* Blog Grid */
+.blog_grid{
+    display: grid;
+    grid-template-columns:  24% 24% 24% 24%;
+    grid-column-gap: 15px;
+    color: black;
+    padding-left: 10px;
+    grid-row-gap: 20px;
+    padding-top: 20px;
+    
+}
+.blog_grid div{
+    border: 1px solid #3797b9;
+}
+.blog_grid img{
+    width: 100%;
+}
+.blog_header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.b_button{
+    margin-top: 35px;
+    color: rgb(255, 187, 0);
+    text-decoration: none;
+}
+.b_head{
+    text-decoration: none;
+    color: black;
+}
+.b_head:hover{
+    color:  #3797b9;
+}
+.b_text{
+    margin-bottom: 20px;
+}
+/* End of Blog */
+/* Start of Shop Page */
+/* Start of Shop Header */
+.s_header{
+    font-family: Lobster;
+    text-align: center;
+    font-weight: unset;
+    
+}
+.s_text{
+    text-align: center;
+    width: 70%;
+    padding-left: 250px;
+}
+/* End of Shop Header */
+/* Start of Shop Grid */
+.s_grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+    width: 70%;
+    padding-left: 210px;
+    padding-top: 50px;
+}
+.s_grid button{
+    margin-left: 110px;
+    border: 1px solid #3797b9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+}
+.s_grid a{
+    text-decoration: unset;
+    color: #3797b9;
+}
+/* End of Shop Grid */
+/* End of Shop Page */
+/* Start of Birthday Page */
+/* Start of Birthday Text */
+.birth img{
+    width: 100%;
+    height: 400px;
+}
+.birthday_background{
+    position: absolute;
+    top: 200px;
+    left: 770px;
+    right: 50px;
+}
+.birth_header{
+    font-family: Lobster;
+    font-weight: unset;
+}
+.birth_text{
+    margin-top: 10px;
+}
+/* End of Birthday text */
+/* Start of Birthday Grid */
+.birth_grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+    padding-top: 50px;
+    text-align: center;
+}
+.birth_grid img{
+    width: 250px;
+    height: 350px;
+    padding-left: 60px;
+}
+.birth_grid div h1{
+    text-align: center;
+    font-family: Radio;
+    font-weight: unset;
+    font-size: 20px;
+}
+.birth_grid div p{
+    font-size: 17px;
+    text-align: center;
+}
+.birth_grid div button{
+    margin-top: 20px;
+}
+/* End of Birthday Grid */
+/* End of Birthday Page */
+/* Start of About Page */
+.about_header{
+    text-align: center;
+    padding-top: 30px;
+}
+.about_pag{
+    width: 80%;
+    padding-left: 150px;
+    padding-left: 150px;
+    padding-top: 50px;
+    font-size: 20px;
+    font-family: Radio;
+    text-align: justify;
+}
