@@ -14,10 +14,10 @@
         <input type="number" placeholder="Age" class="age">
         <br>
         <br>
-        <input type="radio" name="SingleOrMarried" id="Single">
-        <label for="">Single</label>
-        <input type="radio" name="SingleOrMarried" id="Married">
-        <label for="">Marriaged</label>
+        <input type="radio" name="SingleOrMarried" id="Single" checked>
+        <label for="Single">Single</label>
+        <input type="radio" name="SingleOrMarried" id="Marriaged">
+        <label for="Marriaged">Marriaged</label>
         <br>
         <br>
         <input type="text" placeholder="Spouse" id="Spouse">
@@ -30,12 +30,15 @@
 
     <script>
         $(function(){
+            $("#Spouse").hide()
+        })
+        $(function(){
             $("#Single").click(function(){
                 $("#Spouse").hide()
             })
         })
         $(function(){
-            $("#Married").click(function(){
+            $("#Marriaged").click(function(){
                 $("#Spouse").show()
             })
         })
