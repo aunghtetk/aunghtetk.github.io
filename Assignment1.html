@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="Name" class="name">
+        <br>
+        <br>
+        <input type="number" placeholder="Age" class="age">
+        <br>
+        <br>
+        <input type="radio" name="SingleOrMarried" id="Single">
+        <label for="">Single</label>
+        <input type="radio" name="SingleOrMarried" id="Married">
+        <label for="">Marriaged</label>
+        <br>
+        <br>
+        <input type="text" placeholder="Spouse" id="Spouse">
+        <br>
+        <br>
+        <button class="Sbtn" type="submit">Save</button>
+    </form>
+
+    <script src="jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#Single").click(function(){
+                $("#Spouse").hide()
+            })
+        })
+        $(function(){
+            $("#Married").click(function(){
+                $("#Spouse").show()
+            })
+        })
+    </script>
+
+    <style>
+        .Sbtn {
+            background-color: red;
+            color: white;
+            border: 0px;
+            width: 100px;
+            height: 40px;
+            border-radius: 15px;
+        }
+        .name {
+            width: 250px;
+            height: 30px;
+            background-color: rgba(128, 128, 128, 0.367);
+            border: 0px;
+        }
+        .age {
+            width: 250px;
+            height: 30px;
+            background-color: rgba(128, 128, 128, 0.367);
+            border: 0px;
+        }
+        #Spouse {
+            width: 250px;
+            height: 30px;
+            background-color: rgba(128, 128, 128, 0.367);
+            border: 0px;
+        }
+    </style>
+</body>
+</html>
