@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="Name" name="name" id="name">
+        <br>
+        <br>
+        <label for="">Hobbies :</label>
+        <br>
+        <input type="checkbox" name="hobbies" id="Reading" value="Reading"> 
+        <label for="Reading">Reading</label>
+        <input type="checkbox" name="hobbies" id="Guitar" value="Playing Guitar">
+        <label for="Guitar">Playing Guitar</label>
+        <input type="checkbox" name="hobbies" id="game" value="Game">
+        <label for="game">Game</label>
+        <br>
+        <input type="checkbox" name="hobbies" id="cooking" value="Cooking">
+        <label for="cooking">Cooking</label>
+        <input type="checkbox" name="hobbies" id="drawing" value="Drawing">
+        <label for="drawing">Drawing</label>
+        <input type="checkbox" name="hobbies" id="knitting" value="Knitting">
+        <label for="knitting">Knitting</label>
+        <br>
+        <button id="Sbtn" type="submit">Save</button>
+    </form>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function (){
+            $("form").on("submit",function(event){
+                event.preventDefault();
+
+                $("button").click(function(){
+                    var name = $("input[name = 'name']").val()
+                    var hobbies = []
+                    $.each($("input[name='hobbies']:checked"), function(){
+                    hobbies.push($(this).val());
+                    });
+                    if(hobbies.length == 1){
+                        alert("My favourite hobbies is " + hobbies.join());
+                    }
+                    else if(hobbies.length == 2){
+                        alert("My favourite hobbies are " + hobbies.join(" and "));
+                    }
+                    else{
+                        alert("My favourite hobbies are " + hobbies.join(" , "));
+                    }
+                    
+                })
+                
+            })
+
+        })
+    </script>
+    <style>
+        #name {
+            background-color: rgba(128, 128, 128, 0.367);
+            width: 200px;
+            height: 30px;
+            border: none;
+        }
+        #Sbtn {
+            background-color: red;
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+</body>
+</html>
