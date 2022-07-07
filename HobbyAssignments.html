@@ -42,13 +42,13 @@
                     hobbies.push($(this).val());
                     });
                     if(hobbies.length == 1){
-                        alert("My favourite hobbies is " + hobbies.join());
+                        alert(`My name is ${name} and my hobbies is ` + hobbies.join());
                     }
                     else if(hobbies.length == 2){
-                        alert("My favourite hobbies are " + hobbies.join(" and "));
+                        alert(`My name is ${name} and my hobbies are ` + hobbies.join(" and "));
                     }
                     else{
-                        alert("My favourite hobbies are " + hobbies.join(" , "));
+                        alert(`My name is ${name} and my hobbies are ` + hobbies.join(" , "));
                     }
                     
                 })
