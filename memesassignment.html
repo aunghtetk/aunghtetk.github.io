@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memes</title>
+</head>
+<body>
+    <div>
+        <div class="memes"></div>
+        <div class="edit">
+            <div class="selected">
+                <img
+                id="current"
+                class="current_memes"
+                data-id="181913649"
+                data-url="https://i.imgflip.com/30b1gx.jpg"
+                data-name="Drake Hotline Bling"
+                data-box="2"
+                src="https://i.imgflip.com/30b1gx.jpg"
+                alt="Drake Hotline Bling"
+              />
+            </div>
+            <div class="edit_memes">
+                <h1 class="name">Memes name : </h1>
+                <form action="" class="input">
+                    <br>
+                    <input class="text" id="input1" type="text" placeholder="text 1" name="text1">
+                    <br>
+                    <input class="text" id="input2" type="text" placeholder="text 2" name="text2">
+                </form>
+                <button id="mybtn">Generate</button>
+                <button id="dbtn">Download</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- style -->
+    <style>
+        .memes{
+            height: 170px;
+            margin: auto;
+            overflow: auto;
+            white-space: nowrap;
+        }
+        .memes_class{
+            width: auto;
+            height: 90%;
+            padding: 0px 5px;
+        }
+        .memes_class :hover{
+            border: 5px;
+            border-color: black;
+        }
+        .edit{
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        .selected img{
+            width: 500px;
+            height: auto;
+            padding-left: 100px;
+            margin-top: 75px;
+        }
+        /* .current_memes{
+            width: 420px;
+            height: auto;
+            padding-left: 100px;
+            margin-top: 75px;
+        }    */
+        .name{
+            margin-top: 90px;
+        }     
+        .text{
+            margin-top: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 30px;
+            width: 500px;
+        }
+        #mybtn{
+            margin-top: 30px;
+            padding: 30px 100px;
+            font-size: 20px;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+        #dbtn{
+            margin-top: 30px;
+            padding: 30px 100px;
+            font-size: 20px;
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+
+    </style>
+    <!-- script -->
+    <script src="jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $(function (){
+            $.get("https://api.imgflip.com/get_memes",
+            function(resp){
+                // console.log(resp)
+                if(resp.success){
+                    // console.log(resp.data.memes)
+                    var memes = resp.data.memes;
+                    var data="";
+                    for(const row of memes){
+                        data += `<img class="memes_class" data-id="${row.id}" data-url="${row.url}" data-name="${row.name}" data-box="${row.box_count}" src="${row.url}" alt="${row.name}">`;
+                    }
+                    $(".memes").html(data)
+                }
+            })
+            $(".memes").click(function(){
+                $(".memes_class").click(function(){
+                    var id = $(this).data("id")
+                    var url = $(this).attr("src")
+                    var name = $(this).data("name")
+                    var box = $(this).data("box")
+
+                    var img = `<img src="${url}" data-id="${id}" data-name="${name}" data-box="${box}" class="memeimg">`;
+                    $(".selected").html(img);
+                    
+                    var text_box = "";
+                    for(var i = 0; i < box; i++){
+                        text_box +=`<input type ="text" id ="input${i}" class = "text" placeholder="text${i+1}" name ="text${i+1}"><br>`;
+                    }
+                    $(".input").html(text_box);
+
+                    $(".name").html(name);
+                });
+
+
+            });
+
+            $("#mybtn").on("click",function(){
+                var box = $(".memeimg").data("box")
+                var id = $(".memeimg").data("id")
+                var text = []
+                var url =$(".memeimg").attr("src")
+                var name =$(".memeimg").data("name")
+                console.log(url,name,id)
+                for(var i = 0; i < box; i++){
+                    text[i] = { text: $(`#input${i}`).val() }
+                }
+                console.log(text) 
+                $.post("https://api.imgflip.com/caption_image",{
+                    template_id: id,
+                    username:"thetpainghtut",
+                    password:"Apple!@#",
+                    boxes: text
+                   
+                },function(resp){
+                    if(resp.success){
+                        var images = `<img src ="${resp.data.url}" data-id ="${id}" data-name = "${name}" data-url ="${resp.data.url}"/>`;
+                        console.log(images)
+                        $(".selected").html(images);
+                    }   
+                    else{
+                        alert("error")
+                    }   
+                })
+            })
+            $("#dbtn").on("click",function(){
+                var url =$(".selected img").data("url")
+                var name =$(".selected img").data("name")
+                swal({
+                    title: `${name}`,
+                    icon: `${url}`,
+                    button: "Download",
+                });
+            })
+        })
+    </script>
+</body>
+</html>
