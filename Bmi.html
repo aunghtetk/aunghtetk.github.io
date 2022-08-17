@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="bmi.js"></script>
+</head>
+<body>
+    <div id="app" style="text-align: center;">
+        <h1>BMI Calculator</h1>
+        <label for="">Height</label>
+        <input type="number" name="ft" v-model="ft" placeholder="ft">
+        <input type="number" v-model="inch" name="inch" placeholder="in">
+        <br>
+        <br>
+        <label for="">Weight</label>
+        <input type="number" v-model="lb" name="lb" placeholder="lb">
+        <br>
+        <br>
+        <button @click="result = calculate(ft,inch,lb)">Calculate</button>
+        <div v-html="result"></div>
+        <div>
+            <p>BMI Categories:</p>
+            <p>Underweight = < 18.5 </p>
+            <p>Normal weight = 18.5 - 24.9 </p>
+            <p>Overweight = 25 - 29.9</p>
+            <p>Obesity = BMI of 30 or greater</p>
+          </div>
+    </div>
+    
+    <script>
+        const mountedApp = app.mount('#app');
+    </script>
+</body>
+</html>
